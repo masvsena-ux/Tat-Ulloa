@@ -1,0 +1,158 @@
+body {
+    margin: 0;
+    background-color: black;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar {
+    width: 100%;
+    background-color: #111;
+    padding: 15px 40px;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden; 
+}
+
+.navbar::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 200%;   /* más grande que el navbar */
+    height: 3px;
+
+    background: linear-gradient(
+        to right,
+        #0833a2 0%,
+        #0833a2 15%,
+        #842593 30%,
+        #842593 45%,
+        #0833a2 60%,
+        #0833a2 75%,
+        #842593 90%,
+        #842593 100%
+    );
+
+    animation: conveyor 6s linear infinite;
+}
+
+@keyframes conveyor {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+.logo-img {
+    width: 60px;
+    height: auto;
+}
+
+.nav-links {
+    display: flex;
+    gap: 15px;
+}
+
+.nav-btn {
+    padding: 10px 18px;
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    border-radius: 8px;
+
+    background:
+        linear-gradient(#111, #111) padding-box,
+        linear-gradient(to right, #0833a2, #842593) border-box;
+
+    border: 2px solid transparent;
+
+    transition: 0.3s ease;
+}
+
+.nav-btn:hover {
+    transform: translateY(-2px);
+}
+
+.main {
+    padding: 60px;
+    color: white;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between; /* separa izquierda y derecha */
+    align-items: center;
+}
+
+.nav-left,
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+/* Sección Historial (Citas / Compras) */
+
+.history-section {
+    width: 90%;
+    max-width: 1100px;
+    margin: 60px auto;
+    color: white;
+}
+
+.history-title {
+    font-size: 22px;
+    margin-bottom: 35px;
+    font-weight: normal;
+}
+.history-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.history-card {
+    background: #1a1a1a;
+    padding: 25px 30px;
+    border-radius: 14px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border: 1px solid rgba(255,255,255,0.08);
+    transition: 0.3s ease;
+}
+
+.history-card:hover {
+    border: 1px solid rgba(132,37,147,0.6);
+    transform: translateY(-3px);
+}
+.history-card h3 {
+    margin: 0 0 8px 0;
+    font-size: 16px;
+}
+
+.history-card p {
+    margin: 3px 0;
+    font-size: 13px;
+    opacity: 0.8;
+}
+.history-status {
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-size: 12px;
+    border: 1px solid rgba(255,255,255,0.15);
+}
+
+.completed {
+    background: rgba(0, 255, 150, 0.07);
+}
+
+.pending {
+    background: rgba(255, 200, 0, 0.07);
+}
+
+.delivered {
+    background: rgba(0, 150, 255, 0.07);
+}

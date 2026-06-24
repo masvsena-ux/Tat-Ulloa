@@ -1,0 +1,93 @@
+body {
+   margin: 0;
+   background-color: black;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100vh;
+}
+
+.lg {
+    width: 400px;
+    height: 420px;
+    padding: 30px;
+    background-color: #2a2a2a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Borde animado */
+.lg::before {
+    content: "";
+    position: absolute;
+    width: 150%;
+    height: 150%;
+    background: conic-gradient(#0833a2, #842593, #0833a2);
+    animation: rotate 4s linear infinite;
+}
+
+/* Capa interior para que se vea gris */
+.lg::after {
+    content: "";
+    position: absolute;
+    inset: 3px;
+    background-color: #2a2a2a;
+    border-radius: 10px;
+}
+
+/* Animación */
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.contenido {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+.titulo {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin: 0;
+}
+
+input {
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    background-color: #1a1a1a;
+    color: white;
+}
+
+button {
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    background: linear-gradient(to right, #0833a2, #842593);
+    color: white;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.logo {
+    width: 120px;
+    align-self: center;
+    margin-bottom: 5px;
+}
+
+.ti {
+    margin: 0;
+    color: white;
+    font-size: 14px;
+}

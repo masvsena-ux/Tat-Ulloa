@@ -1,0 +1,215 @@
+body {
+    margin: 0;
+    background-color: black;
+}
+
+.mt {
+    text-align: center;
+    padding: 25px 0;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    color: white;
+    position: relative;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    margin-left: 80px;
+    margin-bottom: -22px;
+}
+
+.sidebar:hover .mt {
+    opacity: 1;
+}
+
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 70px;
+    overflow: hidden;
+    transition: width 0.3s ease;
+    z-index: 1000;
+    background: linear-gradient(
+        180deg,
+        #2f2f2f 0%,
+        #262626 50%,
+        #1f1f1f 100%
+    );
+}
+
+.sidebar::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 4px;
+    height: 200%;
+    background: linear-gradient(
+        to bottom,
+        #0833a2 0%,
+        #0833a2 15%,
+        #842593 30%,
+        #842593 45%,
+        #0833a2 60%,
+        #0833a2 75%,
+        #842593 90%,
+        #842593 100%
+    );
+    animation: conveyor 6s linear infinite;
+}
+
+@keyframes conveyor {
+    from { transform: translateY(0); }
+    to { transform: translateY(-50%); }
+}
+
+.sidebar:hover {
+    width: 250px;
+}
+
+.sidebar:hover .menu a {
+    opacity: 1;
+}
+
+.menu {
+    list-style: none;
+    padding: 20px 10px;
+    margin: 0;
+}
+
+.menu li {
+    margin-bottom: 15px;
+}
+
+.menu a {
+    display: block;
+    padding: 12px 15px;
+    text-decoration: none;
+    color: white;
+    background-color: black;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.menu a::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(to bottom, #0833a2, #842593);
+    border-radius: 0 8px 8px 0;
+}
+
+.menu a:hover {
+    transform: translateX(5px);
+    transition: 0.3s ease;
+}
+
+.logo2 {
+    width: 90px;
+    align-self: center;
+}
+
+.form-wrapper {
+    margin-left: 70px;
+    padding: 60px;
+    color: white;
+}
+
+.st {
+    font-size: 26px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin: 30px 0 30px 0;
+    margin-left: 100px;
+    color: white;
+    position: relative;
+    display: inline-block;
+}
+
+.st::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 60%;
+    height: 3px;
+    border-radius: 4px;
+    background: linear-gradient(to right, #0833a2, #842593);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-group label {
+    font-size: 14px;
+    opacity: 0.7;
+}
+
+.form-group input,
+.form-group select {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #333;
+    background-color: #1a1a1a;
+    color: white;
+    font-size: 14px;
+    outline: none;
+    transition: 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #842593;
+}
+
+.btn-submit {
+    margin-top: 10px;
+    padding: 12px;
+    border-radius: 10px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    font-weight: 600;
+    color: white;
+    background:
+        linear-gradient(#111, #111) padding-box,
+        linear-gradient(to right, #0833a2, #842593) border-box;
+    transition: 0.3s ease;
+}
+
+.btn-submit:hover {
+    transform: scale(1.03);
+}
+
+/* PESTAÑA */
+.menu-tab {
+    position: fixed;
+    left: 70px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: linear-gradient(to bottom, #0833a2, #842593);
+    color: white;
+    font-size: 11px;
+    letter-spacing: 3px;
+    padding: 10px 6px;
+    border-radius: 0 8px 8px 0;
+    writing-mode: vertical-rl;
+    z-index: 999;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.menu-tab.oculto {
+    opacity: 0;
+}
